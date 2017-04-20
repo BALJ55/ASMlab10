@@ -47,54 +47,6 @@ sender:
   beq mayor
   b salir
 
-
-
-fillnotas:
-  @Llena las notas del arreglo
-
-  @muestra el mensaje de ingreso de notas
-  MOV R7, #4		@4=llamado a "write" swi
-  MOV R0, #1		@1=stdout (monitor)
-  MOV R2, #73		@longitud de la cadena: 11 caracteres
-  LDR R1, =menuPpal	@apunta a la cadena
-  SWI 0
-  @llena la primera nota 
-  MOV R7, #3		@3=llamado a "read" swi
-  MOV R0, #0		@0=stdout (teclado)
-  MOV R2, #11		@longitud de la cadena: 11 caracteres
-  LDR R1, =arregloNotas	@apunta a la variable donde se guarda
-  SWI 0
-  
-  @muestra el mensaje de ingreso de notas
-  MOV R7, #4		@4=llamado a "write" swi
-  MOV R0, #1		@1=stdout (monitor)
-  MOV R2, #73		@longitud de la cadena: 11 caracteres
-  LDR R1, =menuPpal	@apunta a la cadena
-  SWI 0
-  @llena la segunda nota 
-  MOV R7, #3		@3=llamado a "read" swi
-  MOV R0, #0		@0=stdout (teclado)
-  MOV R2, #11		@longitud de la cadena: 11 caracteres
-  LDR R1, =arregloNotas	@apunta a la variable donde se guarda
-  add r1,r1,#4
-  SWI 0
- 
-  @muestra el mensaje de ingreso de notas
-  MOV R7, #4		@4=llamado a "write" swi
-  MOV R0, #1		@1=stdout (monitor)
-  MOV R2, #73		@longitud de la cadena: 11 caracteres
-  LDR R1, =menuPpal	@apunta a la cadena
-  SWI 0
-  @llena la tercera nota 
-  MOV R7, #3		@3=llamado a "read" swi
-  MOV R0, #0		@0=stdout (teclado)
-  MOV R2, #11		@longitud de la cadena: 11 caracteres
-  LDR R1, =arregloNotas	@apunta a la variable donde se guarda
-  add r1,r1,#4
-  SWI 0
-  add r9,r9,#1
-  b showmenu
-
 salir:
   MOV R7, #1		@salida al sistema operativo
   SWI 0

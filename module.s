@@ -1,6 +1,6 @@
 .text
  .align  2
- .global  main
+ .global  module
  .type  main, %function
 mayorInt: 
 	 @Suponiendo que el primer numero esta en r0
