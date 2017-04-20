@@ -20,8 +20,8 @@ showmenu:
   MOV R2, #73		@longitud de la cadena: 73 caracteres
   LDR R1, =menuPpal	@apunta a la cadena
   SWI 0
-  MOV R7, #1		@salida al sistema operativo
-  SWI 0
+@  MOV R7, #1		@salida al sistema operativo
+@  SWI 0
   b getoption
 
 getoption:
@@ -29,9 +29,9 @@ getoption:
   MOV R7, #3		@3=llamado a "read" swi
   MOV R0, #0		@0=stdout (teclado)
   MOV R2, #1		@longitud de la cadena: 2 caracteres
-  LDR R1, =getnote      @apunta a la variable donde se guarda
+  LDR R1, =option      @apunta a la variable donde se guarda
   SWI 0
-  MOV R7, #1		@salida al sistema operativo
+@  MOV R7, #1		@salida al sistema operativo
   ldr r0, [r1]
   sub r0, #0x30
   b sender
@@ -54,9 +54,10 @@ salir:
 @-------------------------------------------------------------
 @area de datos
   .data
-
+ 
   menuPpal: .asciz "Bienvenido al ingreso de notas/n1. Ingreso de notas/n2. Nota mayor/n3.Salir"
   option: .asciz "%d"
   notemsj .asciz "Ingrese la nota (00-99)/n"
   getnote .asciz "  "
   arregloNotas .word "  ","  ","  "
+  

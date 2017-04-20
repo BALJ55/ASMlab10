@@ -8,16 +8,16 @@ mayorInt:
 	 @el tercero en r2
 	 push {lr}
 	 cmp r0,r1
-	 jge cmpseg1
-	 jnge cmpseg2
+	 bge cmpseg1
+	 bnge cmpseg2
 	 cmpseg1:
 	 cmp r0,r2
-	 jge primeromayor
-	 jnge tercero mayor 
+	 bge primeromayor
+	 bnge tercero mayor 
 	 cmpseg2:
 	 cmp r1,r2
-	 jge segundomayor
-	 jnge terceromayor
+	 bge segundomayor
+	 bnge terceromayor
  primeromayor:
 	 mov r7, #4 
 	 mov r0, #1
