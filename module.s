@@ -9,15 +9,15 @@ mayorInt:
 	 push {lr}
 	 cmp r0,r1
 	 bge cmpseg1
-	 bnge cmpseg2
+	 ble cmpseg2
 	 cmpseg1:
 	 cmp r0,r2
 	 bge primeromayor
-	 bnge tercero mayor 
+	 ble tercero mayor 
 	 cmpseg2:
 	 cmp r1,r2
 	 bge segundomayor
-	 bnge terceromayor
+	 ble terceromayor
  primeromayor:
 	 mov r7, #4 
 	 mov r0, #1
