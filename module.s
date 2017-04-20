@@ -13,7 +13,7 @@ mayorInt:
 	 cmpseg1:
 	 cmp r0,r2
 	 bge primeromayor
-	 ble tercero mayor 
+	 ble terceromayor 
 	 cmpseg2:
 	 cmp r1,r2
 	 bge segundomayor

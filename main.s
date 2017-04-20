@@ -57,7 +57,7 @@ salir:
  
   menuPpal: .asciz "Bienvenido al ingreso de notas/n1. Ingreso de notas/n2. Nota mayor/n3.Salir"
   option: .asciz "%d"
-  notemsj .asciz "Ingrese la nota (00-99)/n"
-  getnote .asciz "  "
-  arregloNotas .word "  ","  ","  "
+  notemsj: .asciz "Ingrese la nota (00-99)\n"
+  getnote: .asciz "  "
+  arregloNotas: .word "  ","  ","  "
   
